@@ -1,0 +1,121 @@
+@startuml
+
+
+Register<->Registration
+Display<|-endView
+user<|-Admin
+user<|-ClientAdmin
+user<|-endUser
+user->view
+Quakedetails->Model_DB
+
+
+
+class view {
+@csrf_protect
+request
+username
+email
+password
+ about()
+ blog()
+ contact()
+ details_TCOcean()
+ details()
+ details_cgin()
+ details_coral()
+ details_fish()
+ details_forecast()
+ details_sat()
+ details_storm()
+ details_storm2()
+ details_warn()
+ service()
+ home()
+}
+
+Interface user{
+    username
+    password
+    permissions
+    viewMap()
+    viewData()
+    recieveAlerts()
+    assignAdmin()
+    assignAdmin()
+    assignclientAdmin()
+}
+
+class Admin{
+username
+    password
+    permissions
+    viewMap()
+    viewData()
+    recieveAlerts()
+    assignAdmin()
+    assignclientAdmin()
+}
+
+class ClientAdmin{
+username
+    password
+    permissions
+    viewMap()
+    viewData()
+    recieveAlerts()
+    assignAdmin()
+   registerUserForAlerts()
+
+}
+class endUser{
+username
+    password
+    permissions
+    viewMap()
+    viewData()
+    recieveAlerts()
+}
+
+class Register{
+csrf_protect
+request
+username
+password
+    register()
+    register_success()
+    logout_page()
+    logout()
+}
+
+class Registration {
+usernameString
+password1Password
+password2Password
+emailEmail
+clean_username()
+clean()
+}
+
+class Model_DB{
+    insertDB()
+}
+class Quakedetails {
+site
+description
+created
+depth
+unicode(__self__)
+}
+
+class endView{
+    depth
+    magnitude
+    locale
+    display()
+}
+
+Interface Display{
+    endview()
+}
+@enduml

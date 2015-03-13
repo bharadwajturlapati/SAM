@@ -1,0 +1,16 @@
+1) excel file formats
+
+http://djangotricks.blogspot.in/
+
+2) cloud sync
+
+https://www.youtube.com/watch?v=oKoBeU0p3vg
+
+3)run unit tests
+
+http://pythonselenium.blogspot.in/2015/01/handling-web-alerts.html
+
+4)Ipython
+http://nbviewer.ipython.org/gist/fonnesbeck/5850463
+http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb
+run ipython manage.py shell_plus --notebook

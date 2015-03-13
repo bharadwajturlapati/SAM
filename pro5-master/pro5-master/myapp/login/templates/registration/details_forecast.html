@@ -1,0 +1,234 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Forecast</title>
+    {% load staticfiles %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<link href="{% static "css/styles.css" %} rel="stylesheet" type="text/css" media="all" />
+<!-- start top_js_button -->
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/move-top.js" %}"></script>
+<script type="text/javascript" src="{% static "js/easing.js" %}"></script>
+   <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+<body>
+<!-- start header -->
+<div class="header_bg">
+<div class="wrap">
+	<div class="header">
+		<div class="logo">
+			<a href="index.html"><img src="{% static "images/logo.png" %}" alt=""/> </a>
+		</div>
+		<div class="social-icons">
+		    <ul>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+<!-- start header -->
+<div class="header_btm">
+<div class="wrap">
+	<div class="header_sub">
+		<div class="h_menu">
+			<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="{% url 'login.views.about' %}">About us</a></li>
+				<li><a href="{% url 'login.views.service' %}">Services</a></li>
+				<li><a href="{% url 'login.views.home' %}">Data and Information</a></li>
+				<li><a href="{% url 'login.views.blog' %}">Observations</a></li>
+				<li><a href="{% url 'login.views.contact' %}">Contact us</a></li>
+			</ul>
+		</div>
+		<div class="h_search">
+    		<form>
+    			<input type="text" value="" placeholder="search something...">
+    			<input type="submit" value="">
+    		</form>
+		</div>
+        <div class="menu">
+        	<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="about.html">About us</a></li>
+				<li><a href="service.html">Services</a></li>
+				<li><a href="data.html">Data and information</a></li>
+				<li><a href="blog.html">Observations</a></li>
+				<li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <form action="/iphone/search.html">
+                <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text">
+            </form>
+        </div>
+        <div class="sub-head">
+        	<ul>
+            	<li><a href="#" id="menu">Menu  <span></span></a></li>
+            	<li><a href="#" id="search">Search <span></span></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+	   <script type="text/javascript">
+		$(".menu,.search").hide();
+		$("#menu").click(function(){
+			$(".menu").toggle();
+			$(".search").hide();
+			$("#search").removeClass("active");
+			$("#menu").toggleClass("active");
+		});
+		$("#search").click(function(){
+			$(".search").toggle();
+			$(".menu").hide();
+			$("#menu").removeClass("active");
+			$("#search").toggleClass("active");
+			$(".text").focus();
+		});
+	</script>
+	<script type="text/javascript" src="{% static "js/script.js" %}"></script>
+	<div class="clear"></div>
+
+		<div class="clear"></div>
+</div>
+</div>
+</div>
+<!-- start top_bg -->
+<div class="top_bg">
+<div class="wrap">
+	<div class="top">
+		<h2>OCEAN STATE FORECAST</h2>
+ 	</div>
+</div>
+</div>
+<!-- start main -->
+<div class="wrap">
+	<div class="main">
+		<div class="details">
+			<h2>Location Specific Forecast </h2>
+			<div class="det_pic">
+				  <img src="{% static "images/det_fore.png" %}" alt="" />
+			</div>
+			<div class="det_text">
+				<p class="para">Among the Indian Ocean rim countries, India is endowed with a very long coastline of over 7500 km (including Andaman, Nicobar and Lakshadweep Islands). With the Arabian Sea to the west and the Bay of Bengal to the east and the vast expanse of the Indian Ocean to the south, a wide range of marine activities dominate the maritime zone of India. Prior information on the state of the seas surrounding the Indian subcontinent is vital for the smooth operational activities not only for hose who are venturing out into the sea but also for those at the sea shore. The users can take appropriate informed decisions based on the forecast sea state conditions, saving life and property. There is thus an inherent economic benefit to the users of the ocean state forecast information. The type of activities that takes place along the coastline is also very diverse, varying from traditional fishing to high tech oil exploration. Dotted along the Indian coastline are numerous ports (both major and minor) which have contributed greatly to the economic growth of the country; most of the major ports are located along large coastal cities. For the efficient operation of these ports, one critical factor is information on sea state parameters in the vicinity, like locally generated wind waves, remotely generated swell waves, currents, winds and tides. The entry and exit of the vessels to the port, be it a small fishing boat or a huge oil tanker is governed by these factors and prior knowledge of these parameters will greatly help the operations at the port. Even offshore port activities like Single Point Mooring operations, which is a loading buoy anchored offshore, that serves as a mooring point and interconnect for large tankers loading or offloading gas or liquid products to the shore based facilities requires accurate sea state information.</p>
+<p class="para"><br>Another subtle application of sea state forecast information is recreational tourism at the sea side, including the operations of sea planes, recently introduced at some locations along the Indian coastline. Marine activities in the seas around India, is not restricted to port activities alone and ranges from conventional fishing to high-tech oil-natural gas-mineral explorations; transportation of goods, marine research, and defence activities. Further, this information is important during contingencies like search and rescue operations in the sea and oil spills. During cyclones and other extreme situations, based on the forecast information, alerts are issued to the general public as well as the administrators of the coastal stretch under risk so that that the population under threat is relocated to safer places.Forecasting of oceanographic parameters (both surface and subsurface) at different time scales is thus extremely important for a wide spectrum of users ranging from fishermen to offshore industries.</p>
+<p class="para">
+At present, we provide forecasts of:<br>
+
+1.Height, direction and period (of both wind waves and swell waves).<br>
+2.Sea surface currents.<br>
+3.Sea surface temperature.<br>
+4.Mixed Layer Depth (the well mixed upper layer of the sea).<br>
+5.Depth of the 20 degree isotherm ( a measure of the depth of the thermocline).<br>
+6.Astronomical tides.<br>
+7.Wind speed and direction.<br>
+8.Oil-spill trajectory. </p>
+				
+				<!-- 2nd paragraph -->
+				<p class="para"><br>The forecasts are generated by a suite of state-of-the art numerical models, which are customized to simulate and predict the Indian Ocean features accurately. The models used are I) WAVEWATCH III, MIKE and Regional Ocean Modeling System (ROMS) and General NOAA Oil Modeling Environment (GNOME). Atmospheric forecast products from different meteorological forecasting agencies (NCMRWF and ECMWF) are used for forcing these models in the forecast mode. Global forecast and deep sea forecasts, differ mainly in spatial and temporal resolution of the forecast, extent of validations carried out, etc. In coastal forecast, the models are set up using the concept of 'multiple grid' with coarse resolution in the open ocean region and very fine resolution for the specified coast, providing more accurate data at the coast. These forecasts are generated operationally using the latest Information and Computational Technology tools and run on High Performance Computers.</p>
+
+<p class="para"><br>Our users include fisher and coastal populations, Maritime Boards, Indian Navy, Indian Coast Guard, Shipping sector, Energy Sector, Oil & offshore exploration industries, Port Authorities. Pollution Control Boards. Disaster Management Agencies, NGOs and other research organisations.</p>
+<p class="para"><br>The feedback of the users is collected routinely, through mail, telephone and user interaction meetings at coastal locations as well as at INCOIS, for improving the dissemination system. User awareness and interaction workshops are held along the coastal belt to advise the fishermen and improve the quality of the system, taking their needs into consideration.
+				
+			<div class="read_more">
+					 <a class="btn" href="http://www.incois.gov.in/portal/osf/osf.jsp">read more</a>
+				</div>
+</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<div class="footer_bg">
+<div class="wrap">
+	<div class="footer">
+		<!-- start span_of_4 -->
+		<div class="span_of_4">
+			<div class="span1_of_4">
+				<h4>Latest News</h4>
+				<p>A Report on the Training Course on "Ocean State Forecast (OSF) Services for trainers and operators" during 26-27 November 2014.</p>
+				<ul class="f_nav1">
+					<li class="timer"><a href="#">26-November 2014 </a></li>
+				</ul>
+				<p class="top">A Report on International Training Course On "Ocean Colour Remote Sensing - Data, Processing and Applications" held at ESSO-INCOIS during November 10-14, 2014.</p>
+				<ul class="f_nav1">
+					<li class="timer"><a href="#">10-14-November 2014 </a></li>
+				</ul>
+			</div>
+			<div class="span1_of_4">
+				<h4>Mission</h4>
+				<p>To provide ocean information, seismic data and advisory services to the society, industry, government and scientific community through sustained ocean observations and constant improvements through systematic and focused research..</p>
+			</div>
+			<div class="span1_of_4">
+				<h4>ITCOocean</h4>
+				<p class="btm">The International Training Centre for Operational Oceanography (ITCOocean) is aimed at promoting the development and optimization of scientific base, technology and information system for operational oceanography at national, regional and global scales.<br><a href="details_ITCOcean.html" target=_window>See more...</a></p>
+</div>
+
+			<div class="span1_of_4">
+				<h4>get in touch</h4>
+				<p class="btm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+				<p class="btm1 pin">Texas, US</p>
+				<p class="btm1 mail"><a href="mailto:info@mycompany.com">info(at)mycompany.com </a></p>
+				<p class="call">01234 444 777</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- start footer -->
+<div class="footer_bg1">
+<div class="wrap">
+	<div class="footer1">
+		<!-- scroll_top_btn -->
+	    <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+		 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+		<!--end scroll_top_btn -->
+		<div class="social-icons">
+		    <ul>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+			</ul>
+		</div>
+		<div class="copy">
+			<p class="link"><span>&copy; 2014 Seismic Data Distribution.</span></p>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+</body>
+</html>

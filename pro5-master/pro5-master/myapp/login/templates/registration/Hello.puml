@@ -1,0 +1,15 @@
+@startuml
+
+varsha*-human
+
+class Varsha {
+
+}
+
+Interface Human {
+}
+
+
+
+
+@enduml

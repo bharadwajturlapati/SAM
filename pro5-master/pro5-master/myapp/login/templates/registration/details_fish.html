@@ -1,0 +1,223 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Fishing zones</title>
+    {% load staticfiles %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<link href="{% static "css/styles.css" %}" rel="stylesheet" type="text/css" media="all" />
+<!-- start top_js_button -->
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/move-top.js" %}"></script>
+<script type="text/javascript" src="{% static "js/easing.js" %}"></script>
+   <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+<body>
+<!-- start header -->
+<div class="header_bg">
+<div class="wrap">
+	<div class="header">
+		<div class="logo">
+			<a href="index.html"><img src="{% static "images/logo.png" %}" alt=""/> </a>
+		</div>
+		<div class="social-icons">
+		    <ul>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+<!-- start header -->
+<div class="header_btm">
+<div class="wrap">
+	<div class="header_sub">
+		<div class="h_menu">
+			<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="{% url 'login.views.about' %}">About us</a></li>
+				<li><a href="{% url 'login.views.service' %}">Services</a></li>
+				<li><a href="{% url 'login.views.home' %}">Data and Information</a></li>
+				<li><a href="{% url 'login.views.blog' %}">Observations</a></li>
+				<li><a href="{% url 'login.views.contact' %}">Contact us</a></li>
+			</ul>
+		</div>
+		<div class="h_search">
+    		<form>
+    			<input type="text" value="" placeholder="search something...">
+    			<input type="submit" value="">
+    		</form>
+		</div>
+        <div class="menu">
+        	<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="about.html">About us</a></li>
+				<li><a href="service.html">Services</a></li>
+				<li><a href="index.html">Data and Information</a></li>
+				<li><a href="blog.html">Observations</a></li>
+				<li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <form action="/iphone/search.html">
+                <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text">
+            </form>
+        </div>
+        <div class="sub-head">
+        	<ul>
+            	<li><a href="#" id="menu">Menu  <span></span></a></li>
+            	<li><a href="#" id="search">Search <span></span></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+	   <script type="text/javascript">
+		$(".menu,.search").hide();
+		$("#menu").click(function(){
+			$(".menu").toggle();
+			$(".search").hide();
+			$("#search").removeClass("active");
+			$("#menu").toggleClass("active");
+		});
+		$("#search").click(function(){
+			$(".search").toggle();
+			$(".menu").hide();
+			$("#menu").removeClass("active");
+			$("#search").toggleClass("active");
+			$(".text").focus();
+		});
+	</script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<div class="clear"></div>
+
+		<div class="clear"></div>
+</div>
+</div>
+</div>
+<!-- start top_bg -->
+<div class="top_bg">
+<div class="wrap">
+	<div class="top">
+		<h2>Potential Fishing Zones</h2>
+ 	</div>
+</div>
+</div>
+<!-- start main -->
+<div class="wrap">
+	<div class="main">
+		<div class="details">
+			<h2>Marine Fish Advisories</h2>
+			<div class="det_pic">
+				  <img src="{% static "images/det_fish.jpg" %}" alt="" />
+			</div>
+			<div class="det_text">
+				<p class="para">About 7 million people living along the Indian coastline, spanning over 8100 km, are depending on fishing for their livelihood. Locating and catching fish is always a challenging task. Often, the search for fish ends up in spending considerable time and resources, thus increasing the cost leading to low profitability. A reliable and timely advisory on the potential zones of fish aggregation will benefit the fishing community to reduce the time and effort spent in searching the shoals of fish, thus improving the profitability and hence, the socio-economic status.</p><p class="para"><br>
+The Ministry of Earth Sciences (MoES), earlier known as the Department of Ocean Development (DOD), initiated Marine Satellite Information Services (MARSIS) programme in June 1990, to device methods to use the oceanographic data, especially the satellite data to address the issues involved with the usage of oceanic resources. One of the objectives of MARSIS was the usage of remote sensing data and its applications for the management of coastal oceans and to devise the methods to use the satellite data to harvest food from sea. At this juncture, the scientists from marine sciences, remote sensing and fishery science collaborated to develop a technique that can use the remotely sensed sea surface temperature (SST) to identify the locations of fish aggregation. The concerted collaborative efforts of scientists from Earth Sciences, space and fishery science have resulted in successful demonstration of the application of satellite derived data for the demarcation of ?Potential Fishing Zone (PFZ)? as a proxy to ?potential shoals of fish aggregation? in the Indian waters</p><p class="para"><br>
+				<p class="para"><br>The data on Sea Surface Temperature (SST) and Chlorophyll retrieved regularly from thermal-infrared channels of NOAA-AVHRR (USA) and Eumetsat (ESA)?s Met-Op series satellites along with optical bands of Oceansat-II (India) and MODIS Aqua (USA) satellites are used for the identification of Potential Fishing Zones (PFZ) along the Indian coastline. Divided over 14 sectors - viz. Gujarat, Maharashtra, Goa, Karnataka, Kerala, South Tamil Nadu, North Tamil Nadu, South Andhra Pradesh, North Andhra Pradesh, Orissa, West Bengal, Lakshadweep Islands, Andaman Islands and Nicobar Islands - the PFZ advisories are generated for each sector in the form of PFZ Maps and text. The PFZ Maps contains information on the major landing centers, bathymetry and the location of PFZ (latitude and longitude information). Due to the dynamic nature of the ocean the fishing zones identified on the maps could shift from the marked location. Hence, to guide the fishermen on the probable shifts in PFZ, the wind speed and direction information is also incorporated on the PFZ maps. This information helps the fishermen in locating the PFZ identified in the maps even if they reach the location after a day</p>
+
+ <p class="para"><br>For the comfort of fishermen, the PFZ maps as well as the PFZ text are also provided in the native languages of each sector. The PFZ Text provides the information on location (latitude, longitude), the depth at PFZ location and the distance and direction from easily identifiable prominent sites on the coast like fishing landing centre, light houses.</p>
+
+
+<p class="para"><br>These multi-lingual PFZ advisories are disseminated via various modes viz. telephone, fax, e-mail, website, doordarshan, radio, news media, mobile services/ mobile applications, and under funded projects to universities and partner NGOs. To improve the coverage and penetration, advances in Information and Communication Technology have been adapted. In first phase, primitive LED boards were installed at few sites on pilot basis which could disseminate information only in text form. With the state of art of Technology available, we designed and installed new generation Electronic Display Boards (EDB) at major fishing harbors' which have made significant impact in the delivery chain. These second generation EDBs are equipped with LCD monitor and thus, are capable of displaying colored maps. The 3rd-Gen. EDBs with many more utilities are under development by INCOIS in collaboration with the industry. The information communicated contains the PFZ Map and the details of PFZ text Adequate training is imparted to the fishermen in the utilization of the information including the guidance for reaching the PFZ location in the sea.</p><br>
+				<div class="read_more">
+					 <a class="btn" href="http://www.incois.gov.in/MarineFisheries/PfzAdvisory">read more</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!-- start footer -->
+<div class="footer_bg">
+<div class="wrap">
+	<div class="footer">
+		<!-- start span_of_4 -->
+		<div class="span_of_4">
+			<div class="span1_of_4">
+				<h4>Latest News</h4>
+				<p>A Report on the Training Course on "Ocean State Forecast (OSF) Services for trainers and operators" during 26-27 November 2014.</p>
+				<ul class="f_nav1">
+					<li class="timer"><a href="#">26-November 2014 </a></li>
+				</ul>
+				<p class="top">A Report on International Training Course On "Ocean Colour Remote Sensing - Data, Processing and Applications" held at ESSO-INCOIS during November 10-14, 2014.</p>
+				<ul class="f_nav1">
+					<li class="timer"><a href="#">10-14-November 2014 </a></li>
+				</ul>
+			</div>
+			<div class="span1_of_4">
+				<h4>Mission</h4>
+				<p>To provide ocean information, seismic data and advisory services to the society, industry, government and scientific community through sustained ocean observations and constant improvements through systematic and focused research..</p>
+			</div>
+			<div class="span1_of_4">
+				<h4>ITCOocean</h4>
+				<p class="btm">The International Training Centre for Operational Oceanography (ITCOocean) is aimed at promoting the development and optimization of scientific base, technology and information system for operational oceanography at national, regional and global scales.<br><a href="details _ITCOcean.html" target=_window>See more...</a></p>
+
+			</div>
+			<div class="span1_of_4">
+				<h4>get in touch</h4>
+				<p class="btm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
+				<p class="btm1 pin">Texas, US</p>
+				<p class="btm1 mail"><a href="mailto:info@mycompany.com">info(at)mycompany.com </a></p>
+				<p class="call">01234 444 777</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- start footer -->
+<div class="footer_bg1">
+<div class="wrap">
+	<div class="footer1">
+		<!-- scroll_top_btn -->
+	    <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+		 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+		<!--end scroll_top_btn -->
+		<div class="social-icons">
+		    <ul>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+		      <li><a href="#" target="_blank"></a></li>
+			  <li><a href="#" target="_blank"></a></li>
+			</ul>
+		</div>
+		<div class="copy">
+			<p class="link"><span>&copy; 2014 Seismic Data Distribution</span></p>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+</body>
+</html>
