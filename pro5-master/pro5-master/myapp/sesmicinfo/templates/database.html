@@ -1,0 +1,8 @@
+<h2>Database Details of Seismic Activity</h2>
+ 
+{% for x in items %}
+<p>{{ x.name }} - {{ x.created|date:"D d M Y" }}</p>
+ 
+<p>{{ x.description }}</p>
+<hr />
+{% endfor %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+        {% load staticfiles %}
+{% block title %}Welcome to Oceanic information Services{% endblock %}
+{% block head %}Welcome to Oceaninc information Services{% endblock %}
+{% block content %}
+    <p>Welcome {{ user.username }} !!!</p>
+    <a href="/logout/">Logout</a>
+        <a href = "/recent_activities/">Recent activities</a>
+        <a href = "/showmarkers" %}">Show markers </a>
+{% endblock %}
