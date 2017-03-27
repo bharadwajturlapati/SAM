@@ -13,7 +13,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'django.contrib.auth.views.login'),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^$', 'login.views.about'),
     url(r'^logout/$', 'login.views.logout_page'),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'), # If user is not login it will redirect to login page
     url(r'^register/$', 'login.views.register'),
@@ -35,6 +36,8 @@ urlpatterns = patterns('',
     url(r'^service.html/$', 'login.views.service'),
     url(r'^recent_activities/$', 'sesmicinfo.views.recent_activities'),
     url(r'^showmarkers/$', 'sesmicinfo.views.showmarkers'),
+    url(r'^disaster/$', 'sesmicinfo.views.sendDisasterNotification'),
+    url(r'^checkHealths/$', 'sesmicinfo.views.nodeHealthChecks')
     #url(r'^markers/$', 'sesmicinfo.views.showmarkers'),
 )
 

@@ -2,3 +2,4 @@ djangotoolbox
 django_mongodb_engine
 django-easy-maps
 django_extensions
+boto3

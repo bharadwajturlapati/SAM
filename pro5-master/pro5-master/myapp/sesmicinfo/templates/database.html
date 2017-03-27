@@ -1,8 +1,43 @@
-<h2>Database Details of Seismic Activity</h2>
- 
-{% for x in items %}
-<p>{{ x.name }} - {{ x.created|date:"D d M Y" }}</p>
- 
-<p>{{ x.description }}</p>
-<hr />
-{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node Health Checks</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"/>
+    <script type="text/javascript" src="{% static "js/jquery311.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/datatable.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/datatable.bootstrap.js" %}"></script>
+</head>
+<body>
+<div class="container">
+        <h2>Database Details of Seismic Activity</h2>
+        <table class="table table-hover" id="samactivities">
+            <thead>
+              <tr>
+                <th>Depth of occurance</th>
+                <th>Created at</th>
+                <th>Site[nodeID]</th>
+                <th>Description[magnitude]</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for quakeEntities in items %}
+                <tr>
+                    <td>{{ quakeEntities.depth }}</td>
+                    <td>{{ quakeEntities.created }}</td>
+                    <td>{{ quakeEntities.site }}</td>
+                    <td>{{ quakeEntities.description }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<script>
+    $(document).ready(function() {
+    $('#samactivities').DataTable();
+} );
+    </script>
+</body>
+</html>

@@ -163,3 +163,5 @@ LOGGING = {
         },
     }
 }
+
+EASY_MAPS_GOOGLE_MAPS_API_KEY = 'AIzaSyD8L5njfRS08wNnEX6fV2dFaB7M9t5hHFI'

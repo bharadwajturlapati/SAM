@@ -19,3 +19,17 @@ class MyModel(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
 
+
+class SAMNode(models.Model) :
+    nodeid = models.CharField(max_length=100, unique=True)
+    lastupdatetimestamp = models.DateTimeField()
+    geolocation = models.CharField(max_length=100)
+    region = models.CharField(max_length=100)
+    #healthcheckuri = ""127.0.0.1:3000/checkhealth
+    healthcheckuri = models.CharField(max_length=1000)
+
+    def __unicode__(self): #Tell it to return as a unicode string (The name of the to-do item) rather than just Object.
+        return self.nodeid
+
+
+

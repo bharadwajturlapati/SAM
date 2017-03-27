@@ -2,21 +2,36 @@
 
 
 from django.shortcuts import render_to_response
-
 from django.http import HttpResponse
-
-
-
 from models import *
-
+import boto3
+from models import SAMNode
 
 def recent_activities(request):
-    items = quakedetails.objects.all() #ORM queries the templates for all of the to-do entries.
+    items = QuakeDetail.objects.all() #ORM queries the templates for all of the to-do entries.
 
     return render_to_response('database.html', {'items': items})
 
+
 def showmarkers(request):
     return render_to_response('recent_activities.html')
+
+
+def sendDisasterNotification(request):
+    if request.method  == "GET":
+        client = boto3.client('sns')
+        response = client.publish(
+            TopicArn='arn:aws:sns:us-west-2:517517961283:sesmicactivity',
+            Message='Earth quake of higher magnitude occured. refrain from entering sea level areas',
+            Subject='SAM Notification'
+        )
+        return HttpResponse("Response: {}".format(response))
+    return HttpResponseNotFound('<h1>Supports only GET</h1>')
+
+def nodeHealthChecks(request):
+    samORMnodes = SAMNode.objects.all()
+    return render_to_response('healthchecks.html', {'nodes': samORMnodes})
+
 
 def export_csv(modeladmin, request, queryset):
     import csv

@@ -23,3 +23,8 @@ installation instructions:
     * For starting mongo.cmd make a .cmd file with the following content:
         mongod.exe --dbpath=<path to db>
         Ex : mongod.exe --dbpath=E:\programfiles\mongodb
+    * for using SNS to send the emails and sms to Concerned users . You need to configure the config file at server location.
+      [default]
+        region=[topic region]
+        aws_access_key_id=<access_key_id>
+        aws_secret_access_key=<access_key_secret>

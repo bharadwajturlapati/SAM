@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node Health Checks</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}"/>
+    <script type="text/javascript" src="{% static "js/jquery311.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+</head>
+<script>
+    var nodeID = [];
+    var nodeURI = [];
+    var checkhealth = function(){
+        for(var uriItemsIndex = 0; uriItemsIndex<nodeID.length;++uriItemsIndex){
+            $.ajax({
+                url:nodeURI[uriItemsIndex],
+                }).done(function(data){
+                    setHealthStatus(data.nodeid, data.status);
+                }).fail(function(jqXHR, textStatus, errorThrown){
+                    for(var nodes=0; nodes<nodeID.length;nodes++){
+                        var failedNode = document.getElementById(nodeID[nodes]);
+                        if(failedNode.getAttribute("status") == "failure"){
+                            failedNode.innerHTML = '<img src ="{% static "images/down.png" %}" width="23" height="23">';
+                        }
+                    }
+            });
+        }
+    }
+
+    var setHealthStatus = function(nodeid){
+        var healthyNode = document.getElementById(nodeid);
+        healthyNode.innerHTML = '<img src ="{% static "images/healthy.png" %}" width="23" height="23">';
+        healthyNode.setAttribute("status","healthy");
+    }
+    </script>
+<body>
+    <div class="container">
+        <h2>Health Check</h2>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Node Id</th>
+                <th>Region</th>
+                <th>GeoLocation</th>
+                <th>Lastupdated At</th>
+                  <th>Health status</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for node in nodes %}
+                <tr>
+                    <td>{{ node.nodeid }}</td>
+                    <td>{{ node.region }}</td>
+                    <td>{{ node.geolocation }}</td>
+                    <td>{{ node.lastupdatetimestamp }}</td>
+                    <td id = "{{ node.nodeid }}" uri="{{ node.healthcheckuri }}" status="failure">
+                        <img src ="{% static "images/loading.gif" %}" width="38" height="38">
+                    </td>
+                </tr>
+                <script>
+                        nodeID.push("{{ node.nodeid }}");
+                        nodeURI.push("{{ node.healthcheckuri }}");
+                        </script>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        setTimeout(checkhealth(), 2000);
+    </script>
+</body>
+
+</html>
