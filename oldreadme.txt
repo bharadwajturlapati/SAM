@@ -24,7 +24,7 @@ Improvements over the previous versions :
 Copy Rights By 
 
 Bharadwaj Turlapati 
-Madhurima Doppalpudi 
+Madhurima Doppalapudi 
 Lalitha Sree Meerakori 
 
 
