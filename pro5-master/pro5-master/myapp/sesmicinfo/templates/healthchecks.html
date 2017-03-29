@@ -15,8 +15,10 @@
         for(var uriItemsIndex = 0; uriItemsIndex<nodeID.length;++uriItemsIndex){
             $.ajax({
                 url:nodeURI[uriItemsIndex],
-                }).done(function(data){
-                    setHealthStatus(data.nodeid, data.status);
+                success : function(data){
+                    setHealthStatus(data.nodeid);
+                    },
+                timeout : 3000
                 }).fail(function(jqXHR, textStatus, errorThrown){
                     for(var nodes=0; nodes<nodeID.length;nodes++){
                         var failedNode = document.getElementById(nodeID[nodes]);
@@ -26,13 +28,13 @@
                     }
             });
         }
-    }
+    };
 
     var setHealthStatus = function(nodeid){
         var healthyNode = document.getElementById(nodeid);
         healthyNode.innerHTML = '<img src ="{% static "images/healthy.png" %}" width="23" height="23">';
         healthyNode.setAttribute("status","healthy");
-    }
+    };
     </script>
 <body>
     <div class="container">
@@ -57,17 +59,17 @@
                     <td id = "{{ node.nodeid }}" uri="{{ node.healthcheckuri }}" status="failure">
                         <img src ="{% static "images/loading.gif" %}" width="38" height="38">
                     </td>
-                </tr>
-                <script>
+                    <script>
                         nodeID.push("{{ node.nodeid }}");
                         nodeURI.push("{{ node.healthcheckuri }}");
                         </script>
+                </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
     <script>
-        setTimeout(checkhealth(), 2000);
+        setTimeout(function(){checkhealth()}, 2000);
     </script>
 </body>
 
